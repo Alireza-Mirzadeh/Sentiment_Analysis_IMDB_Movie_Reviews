@@ -32,7 +32,7 @@ Machine learning pipeline for classifying movie review sentiments. Compares mult
 5. Handling Negations
 6. TF-IDF vectorization (max_features=5000, ngram_range=(1,2))
 
-## Model Comparison Results
+## 📈 Model Comparison Results
 
 | Model               | CV Accuracy | Training Time |
 |---------------------|-------------|---------------|
@@ -42,7 +42,7 @@ Machine learning pipeline for classifying movie review sentiments. Compares mult
 | Naive Bayes         | 85%        | 0s             |
 | LightGBM            | 86%        | 4m             |
 
-🏆 Final Model Performance
+## 🏆 Final Model Performance
 Logistic Regression was prioritized for tuning due to its **2-4% higher accuracy** compared to other models, along with **faster training times, interpretability, and robustness to small datasets**. These advantages made it a reliable choice for efficient optimization.
 
 Tuned Logistic Regression
