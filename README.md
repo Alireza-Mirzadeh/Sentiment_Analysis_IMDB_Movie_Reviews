@@ -36,11 +36,11 @@ Machine learning pipeline for classifying movie review sentiments. Compares mult
 
 | Model               | CV Accuracy | Training Time |
 |---------------------|-------------|---------------|
-| *Logistic Regression* | *88%*     | *4s*       |
-| Random Forest       | 84%        | 13m            |
-| XGBoost             | 85%        | 13m            |
-| Naive Bayes         | 85%        | 0s             |
-| LightGBM            | 86%        | 4m             |
+| *Logistic Regression* | *88.6%*     | *4s*       |
+| Random Forest       | 84.7%        | 13m            |
+| XGBoost             | 85.4%        | 13m            |
+| Naive Bayes         | 85.8%        | 0s             |
+| LightGBM            | 86.1%        | 4m             |
 
 ## 🏆 Final Model Performance
 Logistic Regression was prioritized for tuning due to its **2-4% higher accuracy** compared to other models, along with **faster training times, interpretability, and robustness to small datasets**. These advantages made it a reliable choice for efficient optimization.
@@ -48,9 +48,10 @@ Logistic Regression was prioritized for tuning due to its **2-4% higher accuracy
 Tuned Logistic Regression
 ```python
 best_parameters: {
-    'C': [ ], 
-    'penalty': '[ ]', 
-    'solver': '[ ]'
+    'C': 1,
+    'l1_ratio': 0.3,
+    'penalty': 'elasticnet', 
+    'solver': 'saga'
 } 
 ```
 ### Test Set Evaluation
@@ -58,14 +59,14 @@ best_parameters: {
 #### Performance Metrics
 | Metric       | Score |
 |--------------|-------|
-| Accuracy     | %     | 
-| Precision    | %     |                 
-| Recall       | %     |                 
-| F1-Score     | %     |                
+| Accuracy     | 88.9%     | 
+| Precision    | 88.3%     |                 
+| Recall       | 89.7%     |                 
+| F1-Score     | 89%     |                
 
 #### Confusion Matrix
 | Actual \ Predicted | Negative | Positive |
 |--------------------|----------|----------|
-| **Negative**       |          |          |
-| **Positive**       |          |          |
+| **Negative**       |   2197       | 298         |
+| **Positive**       |   257       |  2248        |
 
